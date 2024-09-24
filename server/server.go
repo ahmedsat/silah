@@ -6,6 +6,7 @@ import (
 	"net"
 	"sync"
 
+	"github.com/ahmedsat/bayaan"
 	"github.com/ahmedsat/silah/global"
 )
 
@@ -37,7 +38,7 @@ func (s *Server) Start(address string) error {
 	}
 	defer ln.Close()
 
-	fmt.Println("Server started on", address)
+	bayaan.Info("Server started on %s", address)
 
 	for {
 		conn, err := ln.Accept()
