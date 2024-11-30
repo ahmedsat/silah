@@ -38,7 +38,9 @@ func (s *Server) Start(address string) error {
 	}
 	defer ln.Close()
 
-	bayaan.Info("Server started on %s", address)
+	bayaan.Info("Server started", bayaan.Fields{
+		"address": address,
+	})
 
 	for {
 		conn, err := ln.Accept()
